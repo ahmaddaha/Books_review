@@ -1,0 +1,116 @@
+<%- include('partials/header.ejs') %> 
+
+
+     <div class="how-section1"> 
+
+    
+
+        <div class="row justify-content-start">
+            <div class="col-md-auto">
+                <a class="btn btn-primary custom-btn" href="/addbook" role="button">Add New Book</a>
+            </div>
+          </div> 
+
+
+
+
+
+
+
+
+<% if(locals.posts) { %>  
+
+
+
+  
+
+
+
+
+    <div class="row d-grid gap-2 d-flex justify-content-end mt-5">
+        <div class="col-auto">
+            <p>Sort By: </p>
+            </div>
+            <div class="col-auto">
+        <form action="/sort" method="post">
+            <select name="sort" id="sort-option">
+                <option value="title">Title</option>
+                <option value="author">Author</option>
+                <option value="rating">Rating</option>
+            </select>
+            <input type="submit" value="Go">
+        </form>
+      </div> </div>
+
+
+
+
+
+
+
+
+<% posts.forEach(index => { %>
+        
+
+    
+
+
+        <div class="row pb-3 border-bottom border-1 rounded">
+            <div class="col-md-4 how-img">
+                <img src="https://covers.openlibrary.org/b/id/<%= index.cover_id %>-L.jpg?default=https://openlibrary.org/static/images/icons/avatar_book-lg.png" class="img-thumbnail img-fluid" alt="">
+            </div>
+            <div class="col-md-8 custom_column">
+                <h4><%= index.title %></h4>
+
+
+               
+                          
+                <div class="d-flex gap-2">
+                    <p class="mr-2 mb-0">by</p>
+                    <h4 class="subheading mb-0 ml-2"><%= index.author %></h4>
+                  </div>
+                  
+                  
+
+                            <% for(var i =0; i<5; i++) { %>
+                                <% if (i < index.rating) { %>
+                            <span class="fa fa-star checked"></span>
+                           <% } else { %>
+                            
+                            <span class="fa fa-star"></span>
+                            
+                         <% } %>
+                            <% } %>
+                      
+
+
+            <p class="text-muted"><%= index.book_review  %></p>
+            
+            
+            
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-auto custom_position_buttons" method="post">
+                                    <div class="col-md-auto">
+                                    <a method="post" class="btn btn-primary" href="/edit/<%= index.book_id %>?title=<%= index.title %>&author=<%= index.author%>&text_review=<%= index.book_review  %>&rating=<%= index.rating %>&cover_id=<%= index.cover_id %>&isbn=<%= index.isbn %> " role="button">Edit</a>
+                                    <a method="get" class="btn btn-primary" href="/delete/<%= index.book_id %>" role="button">Delete</a>
+                                  </div> </div>
+            
+            
+            
+                            </div>
+        </div>
+  
+    
+        <%  }); %>
+
+<% }; %>
+
+
+
+    </div>
+
+
+
+
+    <%- include('partials/footer.ejs') %>
+
+

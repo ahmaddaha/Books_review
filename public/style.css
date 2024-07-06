@@ -1,0 +1,140 @@
+.how-section1{
+    margin-top:-15%;
+    padding: 10%;
+}
+.how-section1 h4{
+    color: #ffa500;
+    font-weight: bold;
+    font-size: 30px;
+}
+.how-section1 .subheading{
+    color: #3931af;
+    font-size: 20px;
+}
+.how-section1 .row
+{
+    margin-top: 10%;
+}
+.how-img 
+{
+    text-align: center;
+}
+.how-img img{
+    width: 70%;
+   
+}
+
+.custom-btn {
+    background-color: #3931AF !important;
+    border-color: #3931AF  !important;
+}
+
+
+
+
+
+
+.checked {
+    color: orange;
+  }
+
+
+
+label {
+    color: #333;
+}
+
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 80%;
+    margin-left: 3px;
+    }
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px;
+
+}
+
+.card{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+
+
+
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+}
+
+.rating>input {
+    display: none
+}
+
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 30px;
+    font-weight: 300;
+    color: #FFD600;
+    cursor: pointer
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+.buttons {
+    top: 36px;
+    position: relative
+}
+
+.rating-submit {
+    border-radius: 8px;
+    color: #fff;
+    height: auto
+}
+
+.rating-submit:hover {
+    color: #fff
+}
+
+
+
+@media (min-width: 768px ){
+.custom_column{
+    position: relative;
+}
+.custom_column .custom_position_buttons {
+    position: absolute;
+    bottom: 0;
+    right: 70px;
+  }
+
+}
+  
+
+
+
+

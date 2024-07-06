@@ -1,0 +1,130 @@
+<%- include('partials/header.ejs') %> 
+
+
+
+
+<div class="container ">
+    <div class=" text-center mt-5 ">
+
+        <h1 >  Edit Book</h1>
+            
+        
+    </div>
+
+
+<div class="row ">
+  <div class="col-lg-7 mx-auto">
+    <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-body bg-light">
+   
+        <div class = "container">
+                         <form id="contact-form" role="form" action="/editbook" method="post">
+
+        
+
+        <div class="controls">
+
+
+
+            <div class="row align-items-end">
+
+
+                <div class="col-md-4 order-md-2">
+                    <div class="form-group">
+
+        <img src="https://covers.openlibrary.org/b/id/<%= cover_id  %>-M.jpg?default=https://openlibrary.org/static/images/icons/avatar_book-lg.png" class="img-thumbnail" alt="" >
+           
+
+           </div> </div>
+
+
+
+
+
+                <div class="col-md-8 order-md-1">
+                     <div class="form-group">
+                         
+                        <input type="hidden" value="<%= book_id %>" name="book_id">
+            
+                        <label for="isbn">Book ISBN Number</label>
+                        <input id="isbn" type="text" name="isbn" class="form-control " placeholder="Please enter book isbn" required="required" data-error="Title is required." autocomplete="off" value="<%= isbn %>" disabled>
+                        
+                    
+                        <label for="author">Rating</label>
+                        <div class="rating"> 
+                           
+                            <input type="radio" name="rating" value="5" id="5">
+                            <label for="5">☆</label> 
+                            <input type="radio" name="rating" value="4" id="4">
+                            <label for="4">☆</label> 
+                            <input type="radio" name="rating" value="3" id="3">
+                            <label for="3">☆</label> 
+                            <input type="radio" name="rating" value="2" id="2">
+                            <label for="2">☆</label> 
+                            <input type="radio" name="rating" value="1" id="1" required>
+                            <label for="1">☆</label> 
+                        </div>
+                    
+                    
+                        <label for="book_review">Book review</label>
+                        <textarea id="book_review" name="book_review" class="form-control" placeholder="Write your review here." rows="4" required="required" data-error="Please, leave a review." > <%= book_review %> </textarea>
+                        
+
+                        
+                    
+                    
+                    
+                    </div>
+                </div>
+
+
+
+           
+
+              
+            </div>
+
+              
+            <div class="row">
+            
+
+                <div class="col-md-4">
+                    
+                    <input type="submit" class="btn btn-success btn-send  pt-2 mt-4 btn-block
+                        " value="Save Edit" >
+                
+            </div>
+      
+            </div>
+
+
+    </div>
+     </form>
+    </div>
+        </div>
+
+
+</div>
+    <!-- /.8 -->
+
+</div>
+<!-- /.row-->
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('partials/footer.ejs') %>
